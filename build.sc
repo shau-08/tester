@@ -119,6 +119,7 @@ object chipyardAnnotations extends playground_build.CommonModule with SbtModule 
   override def moduleDeps     = super.moduleDeps ++ Seq(myrocketchip)
 }
 
+
 object chipyardTapeout extends playground_build.CommonModule with SbtModule {
   override def millSourcePath = os.pwd / os.up/ "playground" / "dependencies" / "chipyard" / "tools" / "tapeout"
   //override def millSourcePath = os.pwd / "dependencies" / "chipyard" / "tools" / "tapeout"
@@ -170,6 +171,7 @@ object myproject
     override def ivyDeps = super.ivyDeps() ++ Agg(
       playground_build.ivys.scalatest,
       playground_build.ivys.oslib,
+      ivy"edu.berkeley.cs::chiseltest:6.0.0",
     )
   }
 }
