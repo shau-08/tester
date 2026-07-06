@@ -29,6 +29,7 @@ jobs:
 
       - name: Use pre-cloned playground from AMI
         run: |
+          rm -rf playground
           if [ -d /opt/playground ]; then
             echo "Using pre-baked playground from AMI"
             cp -r /opt/playground playground
